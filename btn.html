@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>A Mystery Button
+</title>
+<font size=7 color="scarlet" face="Roboto">Mysterutton
+</font>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<p color="cyan">Hello! Do not press this button.
+</p>
+<br><br>
+<input class="form-control" placeholder="any last words..." id="theoneandonlyinput">
+<br>
+<br>
+<button class="btn btn-info" id="button1" onclick="suspicious();"><b>Click</b>
+</button>
+<h6 id="head2"></h6>
+<h1 class="page-header text-danger" text-center id="last_words">
+</h1>
+</div>
+<style>
+#last_words{
+font-type = "Monospace Corsiva";
+}
+</style>
+<script>
+last_words = document.getElementById("last_words");
+score = 0;	
+function suspicious() {
+//set timer 1min
+setTimeout(function() {main() ;}, 20000);
+score += 1;	
+console.log(score);
+document.getElementById("head2").innerHTML = "WHO KNOWS WHAT HAPPENS WHEN THE TIMER RUNS OUT...";
+last_words.innerHTML="You could have achieved a lot more after 20...(something)";
+}
+function main() {
+button = document.getElementById("button1");
+button.disabled= true;
+line = document.getElementById("head2");
+if (score >=0 && score<30){
+line.innerHTML = "Uh oh! bad score you're gonna be shot soon by our snipers...";
+}else{
+line.style.fontStyle = "italic";
+line.innerHTML = "You're saved by AN INCH...i was just about to EAT YOU..."
+}
+}
+function print(){
+lastwords = document.getElementById("theoneandonlyinput").value;
+last_words.innerHTML = lastwords + "Open Your Console. Surprose! Your score";
+console.log(lastwords);
+}
+</script>
+</body>
+</html>
